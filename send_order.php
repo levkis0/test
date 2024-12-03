@@ -2,7 +2,7 @@
 // Токен вашого бота
 $token = "7892443614:AAHkVSkHpJJtbioXlawxhPKu_6pLAw4j5mI";
 // ID чату (отримайте його через @userinfobot у Telegram)
-$chat_id = "5542983364";
+$chat_id = "7892443614";
 
 // Отримання даних із форми
 $name = $_POST['name'] ?? 'Не вказано';
