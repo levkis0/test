@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 import telebot
 
-API_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
-CHAT_ID = 'YOUR_TELEGRAM_CHAT_ID'
+API_TOKEN '7892443614:AAHkVSkHpJJtbioXlawxhPKu_6pLAw4j5mI'
+CHAT_ID = '7892443614'
 bot = telebot.TeleBot(API_TOKEN)
 
 app = Flask(__name__)
