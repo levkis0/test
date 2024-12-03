@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Online Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .product button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Online Store</h1>
+        <div class="product">
+            <span>Product 1</span>
+            <button onclick="addToCart('Product 1')">Buy</button>
+        </div>
+        <div class="product">
+            <span>Product 2</span>
+            <button onclick="addToCart('Product 2')">Buy</button>
+        </div>
+        <div class="product">
+            <span>Product 3</span>
+            <button onclick="addToCart('Product 3')">Buy</button>
+        </div>
+    </div>
+
+    <script>
+        function addToCart(productName) {
+            fetch('http://your-server-ip:5000/order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ product: productName }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Order received: ' + productName);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
